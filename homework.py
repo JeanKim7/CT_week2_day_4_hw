@@ -27,7 +27,7 @@ def address_bk():
                 if user_response_override.lower() == "override":
                     address = input("Please enter the address: ")
                     address_book[address_name]= address
-                    print(f"{address_name}'s address has been added!\n")
+                    print(f"{address_name}'s address has been changed!\n")
                     continue
                 #enter a new name to create a new address
                 elif user_response_override.lower() == "new name":
@@ -75,7 +75,7 @@ def address_bk():
                 continue
             #message if address book is empty
             else:
-                print("\nYou haven't entered any addresses yet!\n")
+                print("\nThe address book is empty!\n")
                 continue
         
         #go back to start if they didn't enter correct response
