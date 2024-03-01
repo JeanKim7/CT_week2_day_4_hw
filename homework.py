@@ -1,3 +1,5 @@
+#Exercise 1
+
 def address_bk():
     address_book = {}
     while True:
@@ -14,7 +16,7 @@ def address_bk():
                 break
             #print message if address book is empty
             else:
-                print("\nTry adding some addresses next time! Thanks for using our service.\n")
+                print("\nYour address book is empty. Try adding some addresses next time! Thanks for using our service.\n")
                 break
 
         #adding an address to the address book
@@ -62,7 +64,7 @@ def address_bk():
                 print (f"{address_name_remove}'s address has been removed!\n")
             #go back to start if name doesn't exist
             else:
-                print(f"{address_name_remove} is not in the address book! Please enter a valid name next time.")
+                print(f"{address_name_remove} is not in the address book! Please enter an existing name next time.")
                 continue
         
         #check to see what names and addresses are in the address book
@@ -84,3 +86,24 @@ def address_bk():
             continue
 
 address_bk()
+
+
+
+#Exercise 2
+
+person1 = {'09:00', '10:30', '11:30', '12:00', '13:00', '14:30'}
+person2 = {'09:30', '10:00', '10:30', '12:00', '14:30', '16:00'}
+person3 = {'09:00', '09:30', '11:00', '11:30', '12:00', '13:30', '14:30', '15:00'}
+person4 = {'11:00', '11:30', '12:00', '14:00', '14:30', '16:30', '17:00'}
+# Available Times: '12:00' and '14:30'
+
+def available_times(*times):
+        list_of_sets = []
+        for time in times:
+            list_of_sets.append(time)
+        available_times_set=list_of_sets[0]
+        for i in range(len(list_of_sets)):
+            available_times_set = available_times_set.intersection(list_of_sets[i])
+        return available_times_set
+
+print(available_times(person1, person2, person3, person4))
